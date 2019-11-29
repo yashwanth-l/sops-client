@@ -53,6 +53,11 @@ Private Key
 gpg --allow-secret-key-import --import my-private.asc
 ```
 
+### Important Variables
+
+ - SOPS_PGP_FP
+ - GNUPGHOME
+
 ### Development
 
 Want to contribute? Great!
