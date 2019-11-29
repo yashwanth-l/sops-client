@@ -53,6 +53,17 @@ Private Key
 gpg --allow-secret-key-import --import my-private.asc
 ```
 
+### SOPS Commands
+
+Encrypt
+```
+sops --verbose --output "file.sops.encrypt" --encrypt "file.plaintext
+```
+Decrypt
+```
+sops --verbose --output "file.sops.decrypt" --decrypt "file.plaintext"
+```
+
 ### Important Variables
 
  - SOPS_PGP_FP
