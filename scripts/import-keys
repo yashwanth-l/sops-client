@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-while read KEY_VAR; do
-  echo "### Importing GPG key from ${KEY_VAR}"
-  echo "${!KEY_VAR}" | base64 -d | gpg --import
-done < <(set -o posix; set | awk -F= -vRE="${1:-_KEY}" '$1 ~ RE { print $1 }')
+if [[ -f "$GPG_KEY_FILE" ]];
+then
+ echo "!!!! Importing GPG key from ${GPG_KEY_FILE}"
+ gpg --allow-secret-key-import --import < "${GPG_KEY_FILE}"
+ echo "!!!! Imported GPG key"
+fi
