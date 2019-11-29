@@ -7,7 +7,8 @@ if ! [ -d "${1}" ]; then
 fi
 
 
-while read FILE; do
+while read -r FILE; 
+do
   OUTPUT="${FILE//.sops/}"
   echo "Decrypting ${FILE} to ${OUTPUT}"
   sops --verbose --output "${OUTPUT}" --decrypt "${FILE}"
