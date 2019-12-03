@@ -16,7 +16,6 @@ RUN apk update && \
     chmod 0755 /usr/local/bin/sops && \
     chown root:root /usr/local/bin/sops && \
     sops --version && \
-    apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
 
 CMD ["/bin/bash"]
