@@ -6,6 +6,7 @@ ARG VERSION=$SOPS_VERSION
 LABEL maintainer "Yashwanth.Lakkaraju@T-Mobile.com"
 
 COPY scripts/decrypt-sops \
+     scripts/encrypt-sops \
      scripts/import-keys \
      /usr/local/bin/
 
