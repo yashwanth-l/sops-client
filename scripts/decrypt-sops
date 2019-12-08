@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# FIXME: This should really use getopts or https://github.com/docopt/docopts
 
 if ! [ -d "${1}" ]; then
   echo "!!! Usage: $0 <directoryname> [filename pattern] [--rm]" >&2
