@@ -7,6 +7,8 @@ LABEL maintainer "Yashwanth.Lakkaraju@T-Mobile.com"
 
 COPY scripts/decrypt-sops \
      scripts/encrypt-sops \
+     scripts/decrypt-file-sops \
+     scripts/encrypt-file-sops \
      scripts/import-keys \
      /usr/local/bin/
 
