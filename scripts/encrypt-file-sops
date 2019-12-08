@@ -16,7 +16,7 @@ then
   echo "!!! PASS FILENAME ONLY !!!" >&2
   exit 1
 else
-  echo " !!! ENCRYPTING ${FILE} to ${OUTPUT}"
+  echo "!!! ENCRYPTING ${FILE} to ${OUTPUT}"
   sops --verbose --output "${OUTPUT}" --encrypt "${FILE}"
   rm "${FILE}"
   ls -la "${OUTPUT}"
