@@ -2,35 +2,8 @@
 
 ### Reference
 
-Use the Docker Base Image Embedded with `sops` using the below image(latest)
-```
-image: "registry.gitlab.com/tmobile/selxt/templates/common-shared/sops-client:prd"
-```
+Use the Docker Base Image Embedded with `sops`
 
-### Usage in Application/CaC Repos
-
-Add this in the Application Project's CI YML
-```
-sops-client:
-  stage: sops-client
-  trigger:
-    project: <PUT THE PROJECT PATH>
-    branch: <PUT THE PROJECT BRANCH>
-    strategy: depend
-```
-
-Add this in the Application CaC Project's CI YML
-
-```
-decrypt-config:
- stage: decrypt-config
- dependencies:
-  - import-keys
- script:
-  - decrypt-sops . *.sops.yml --rm
- artifacts:
-  when: on_success
-```
 
 ### Installation of `sops`
 
