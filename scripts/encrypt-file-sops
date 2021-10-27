@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+FILE=$1
+OUTPUT="${FILE%.*}.sops.yml"
+
+#Validate Inputs
+if [ $# -lt 2 ]
+then
+ echo "Usage: $0 <filename> --rm" >&2
+ exit 1
+fi
+
+# SOPS Encrypt
+if ! [ -f "${1}" ];
+then
+  echo "!!! PASS FILENAME ONLY !!!" >&2
+  exit 1
+else
+  echo "!!! ENCRYPTING ${FILE} to ${OUTPUT}"
+  sops --verbose --output "${OUTPUT}" --encrypt "${FILE}"
+  rm "${FILE}"
+  ls -la "${OUTPUT}"
+fi

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ -f "$GPG_KEY_FILE" ]];
+then
+ echo "!!!! Importing GPG key from ${GPG_KEY_FILE}"
+ gpg --allow-secret-key-import --import < "${GPG_KEY_FILE}"
+ echo "!!!! Imported GPG key"
+fi

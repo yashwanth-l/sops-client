@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if ! [ -d "${1}" ]; then
+  echo "!!! Usage: $0 <directoryname> [filename pattern] [--rm]" >&2
+  exit 1
+fi
+
+while read -r FILE;
+do
+  OUTPUT="${FILE%.*}.sops.yml"
+  echo "Encrypting ${FILE} to ${OUTPUT}"
+  sops --verbose --output "${OUTPUT}" --encrypt "${FILE}"
+  [ "${3}" == "--rm" ] && rm "${FILE}"
+  ls -la "${OUTPUT}"
+done < <(find "${1}" -type f -name "${2:-*.yml}")
