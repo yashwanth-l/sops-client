@@ -9,8 +9,8 @@ Use the Docker Base Image Embedded with `sops`
 
 This guide can help you to install as a _binary_ or _build_ using _golang_
 
-[Github Sops](https://github.com/mozilla/sops#id3)
- 
+[Github Sops](https://github.com/mozilla/sops)
+
 ### Setup Key
 ```
 gpg --batch --generate-key <<EOF

@@ -1,9 +1,7 @@
-FROM alpine:3.10.3
+FROM alpine:3.17
 
 ARG SOPS_VERSION
 ARG VERSION=$SOPS_VERSION
-
-LABEL maintainer "Yashwanth.Lakkaraju@T-Mobile.com"
 
 COPY scripts/decrypt-sops \
      scripts/encrypt-sops \
